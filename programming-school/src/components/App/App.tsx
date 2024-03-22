@@ -60,7 +60,7 @@ function App() {
       )}
       <Header setOrder={setOrder} order={order} />
       <main>
-        <GetStarted />
+        <GetStarted setOrder={setOrder}/>
         <Courses
           isVisible={isVisible}
           setIsVisible={setIsVisible}

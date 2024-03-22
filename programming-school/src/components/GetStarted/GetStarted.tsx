@@ -1,6 +1,6 @@
 import styles from './GetStarted.module.scss'
 
-export default function GetStarted() {
+export default function GetStarted({ setOrder }: any) {
   return (
     <div className={styles.container}>
       <div className={styles.text}>
@@ -14,7 +14,11 @@ export default function GetStarted() {
           <span>JavaScript</span>.
         </p>
         <div className={styles.buttons}>
-          <button className={styles.active} type='button'>
+          <button
+            className={styles.active}
+            type='button'
+            onClick={() => setOrder(true)}
+          >
             Начать прямо сейчас
           </button>
           <button type='button'>Ознакомиться с программой</button>
