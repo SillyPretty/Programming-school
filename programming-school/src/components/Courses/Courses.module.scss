@@ -1,0 +1,16 @@
+$main-color: rgba(74, 165, 142, 1);
+
+.container {
+  margin-top: 17rem;
+}
+.title {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.curses {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+}

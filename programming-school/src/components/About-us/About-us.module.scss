@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+.container {
+  margin-top: 13rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  > a {
+    background-color: rgba(74, 165, 210, 0.5);
+    border: none;
+    color: #fff;
+    max-width: 10rem;
+    margin: 3rem auto;
+    border-radius: 0.8rem;
+    transition: 500ms ease-in-out;
+    > img {
+      display: block;
+      width: 100%;
+    }
+    &:hover {
+      box-shadow: 0px 10px 45px rgba(74, 165, 210, 0.3);
+      transform: translateY(-5px);
+    }
+  }
+}
+.title {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 7rem;
+}
+.wrapper {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.content {
+  max-width: 33rem;
+}
+.image {
+  max-width: 44rem;
+  position: absolute;
+  left: 0;
+  box-shadow: 20px 0px 115px rgba(74, 165, 210, 0.5);
+  transition: 500ms ease-in-out;
+  > img {
+    display: block;
+    width: 100%;
+  }
+  &:hover {
+    box-shadow: 20px 0px 115px rgba(74, 165, 210, 0.7);
+  }
+}
+.text {
+  line-height: 1.3rem;
+  margin-bottom: 0.7rem;
+}
+.link {
+  font-family: 'Whisper', cursive;
+  font-size: 2rem;
+  padding: 1rem;
+}
+@media (max-width: 1840px) {
+  .image {
+    max-width: 40rem;
+  }
+}
+@media (max-width: 1680px) {
+  .image {
+    max-width: 34rem;
+  }
+}
+@media (max-width: 1440px) {
+  .image {
+    max-width: 30rem;
+  }
+}
+@media (max-width: 1290px) {
+  .image {
+    margin-top: 2rem;
+    position: relative;
+    max-width: 40rem;
+  }
+  .wrapper {
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 750px) {
+  .title {
+    margin-bottom: 4rem;
+  }
+}
