@@ -6,9 +6,17 @@ interface iCardMenu {
   src: string
   setIsVisible: any
   isVisible: boolean
+  setOrder: any
 }
 
-export default function CardMenu({ title, text, src, setIsVisible, isVisible }: iCardMenu) {
+export default function CardMenu({
+  title,
+  text,
+  src,
+  setIsVisible,
+  isVisible,
+  setOrder
+}: iCardMenu) {
   return (
     <>
       <div className={styles.card}>
@@ -28,7 +36,13 @@ export default function CardMenu({ title, text, src, setIsVisible, isVisible }: 
             title='YouTube video player'
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
           ></iframe>
-          <button type='button'>Продолжить обучение</button>
+          <button
+            type='button'
+            className={styles.send}
+            onClick={() => setOrder(true)}
+          >
+            Продолжить обучение
+          </button>
         </div>
       </div>
     </>

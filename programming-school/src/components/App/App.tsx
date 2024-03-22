@@ -53,6 +53,7 @@ function App() {
       {isVisible && (
         <CardMenu
           isVisible={isVisible}
+          setOrder={setOrder}
           setIsVisible={setIsVisible}
           {...dataCardMenu[count]}
         />
