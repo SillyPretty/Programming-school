@@ -85,11 +85,12 @@
 }
 .menu_close {
   border: none;
+  border-radius: 120px;
   background-color: #46ccab;
   color: #fff;
   box-shadow: -20px 20px 125px rgba(74, 165, 142, 1);
   font-size: 40px;
-  padding: 5px 15px;
+  padding: 0px 15px 5px 15px;
 }
 .menu_navigation {
   display: flex;
