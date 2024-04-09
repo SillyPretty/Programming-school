@@ -5,6 +5,7 @@ import { sendMessage } from '../../api/telegram'
 export default function SendMessage({ setOrder }: any) {
   const [inputValue, setInputValue] = useState<string>('')
   const [selectedOption, setSelectedOption] = useState<string>('')
+  const [isSend, setIsSend] = useState<boolean>(false)
   const handleOptionChange = (
     event: React.ChangeEvent<HTMLSelectElement>
   ): void => {
@@ -14,6 +15,7 @@ export default function SendMessage({ setOrder }: any) {
     setInputValue(event.target.value)
   }
   const handleSubmit = async (name: string, curse: string): Promise<void> => {
+    setIsSend(true)
     if (!name.startsWith('@')) {
       ;`@${name}`
     }
@@ -21,13 +23,16 @@ export default function SendMessage({ setOrder }: any) {
       if (!name.startsWith('@')) {
         const message: string = `Пользователь: @${name} обратился по поводу курса ${curse}`
         await sendMessage(message)
+        setIsSend(false)
         setOrder(false)
       } else {
         const message: string = `Пользователь: ${name} обратился по поводу курса ${curse}`
         await sendMessage(message)
+        setIsSend(false)
         setOrder(false)
       }
     } else {
+      setIsSend(false)
       alert('Не все поля заполнены. Проверьте ещё раз')
     }
   }
@@ -71,7 +76,7 @@ export default function SendMessage({ setOrder }: any) {
           className={styles.send}
           onClick={() => handleSubmit(inputValue, selectedOption)}
         >
-          Отправить
+          {isSend ? 'Загрузка...' : 'Отправить'}
         </button>
       </div>
     </div>
